@@ -16,7 +16,7 @@ RUN  set -ex; \
      chown root:root /usr/local/bin/su-exec; \
      chmod 0755 /usr/local/bin/su-exec; \
      rm /usr/local/bin/su-exec.c; \
-     apt-get purge -y --auto-remove $fetch_deps \
+     apt-get purge -y --auto-remove $fetch_deps; \
      echo es.enforce.bootstrap.checks=false >> /opt/sonarqube/elasticsearch/config/jvm.options
 
 
