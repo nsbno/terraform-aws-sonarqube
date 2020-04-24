@@ -11,7 +11,5 @@ curl -u admin:admin -H "Content-Type: application/x-www-form-urlencoded" -X POST
 curl -u admin:admin -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "key=sonar.auth.github.clientSecret.secured&value=${SONARQUBE_GITHUB_CLIENT_SECRET}" http://localhost:9000/api/settings/set
 curl -u admin:admin -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "key=sonar.auth.github.organizations&values=${SONARQUBE_GITHUB_ORGANIZATIONS}" http://localhost:9000/api/settings/set
 curl -u admin:admin -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "login=${SONARQUBE_ADMIN_USERNAME}&name=Admin&password=${SONARQUBE_ADMIN_PASSWORD}&password_confirmation=${SONARQUBE_ADMIN_PASSWORD}" http://localhost:9000/api/users/create
-sleep 20
 curl -u admin:admin -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "name=sonar-administrators&login=${SONARQUBE_ADMIN_USERNAME}" http://localhost:9000/api/user_groups/add_user
-sleep 20
 curl -u ${SONARQUBE_ADMIN_USERNAME}:${SONARQUBE_ADMIN_PASSWORD}  -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "login=admin" http://localhost:9000/api/users/deactivate
