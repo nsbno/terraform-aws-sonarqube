@@ -63,7 +63,7 @@ resource "aws_lb_listener" "main" {
 }
 
 module "sonarqube_service" {
-  source     = "github.com/nsbno/terraform-aws-ecs-fargate?ref=e6bf17f"
+  source     = "github.com/nsbno/terraform-aws-ecs-fargate?ref=7732048"
   cluster_id = aws_ecs_cluster.cluster.id
   health_check = {
     port    = "traffic-port"
