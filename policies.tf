@@ -1,15 +1,15 @@
 data "aws_iam_policy_document" "kms_for_task" {
   statement {
-    effect = "Allow"
-    actions = ["kms:*"]
+    effect    = "Allow"
+    actions   = ["kms:*"]
     resources = [var.parameters_key_arn]
   }
 }
 
 data "aws_iam_policy_document" "ssm_for_task" {
   statement {
-    effect = "Allow"
-    actions = ["ssm:DescribeParameters"]
+    effect    = "Allow"
+    actions   = ["ssm:DescribeParameters"]
     resources = ["*"]
   }
   statement {
