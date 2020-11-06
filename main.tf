@@ -135,7 +135,7 @@ resource "aws_route53_record" "sonarqube" {
 }
 
 module "certificate" {
-  source           = "github.com/nsbno/terraform-aws-acm-certificate?ref=4d8dc64"
+  source           = "github.com/nsbno/terraform-aws-acm-certificate?ref=39f4f32"
   hosted_zone_name = var.hosted_zone_name
   certificate_name = "${var.name_prefix}.${var.hosted_zone_name}"
   tags             = var.tags
