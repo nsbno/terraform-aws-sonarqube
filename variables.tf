@@ -8,8 +8,8 @@ variable "snapshot_identifier" {
 }
 
 variable "sonarqube_aws_env_img" {
-  description = "Which grafana-aws-env docker image to use"
-  default     = "vydev/sonarqube-aws-env:latest"
+  description = "Which sonarqube-aws-env docker image to use"
+  default     = "vydev/sonarqube-aws-env:8.9"
 }
 
 variable "health_check_grace_period_seconds" {
