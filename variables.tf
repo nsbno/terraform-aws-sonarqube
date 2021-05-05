@@ -12,6 +12,11 @@ variable "sonarqube_aws_env_img" {
   default     = "vydev/sonarqube-aws-env:8.9"
 }
 
+variable "sonarqube_search_jvm_opts" {
+  description = "JVM options to pass to SonarQube on application start-up."
+  default     = "-Dnode.store.allow_mmap=false"
+}
+
 variable "health_check_grace_period_seconds" {
   description = "Seconds to ignore failing load balancer health checks on newly instantiated tasks to prevent premature shutdown, up to 7200. Only valid for services configured to use load balancers."
   type        = number

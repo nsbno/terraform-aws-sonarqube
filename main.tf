@@ -102,7 +102,7 @@ module "sonarqube_service" {
     "SONARQUBE_GITHUB_ORGANIZATIONS" = "ssm://${data.aws_ssm_parameter.sonarqube-github-organizations.name}"
     "SONARQUBE_ADMIN_USERNAME"       = "ssm://${data.aws_ssm_parameter.sonarqube-admin-username.name}"
     "SONARQUBE_ADMIN_PASSWORD"       = "ssm://${data.aws_ssm_parameter.sonarqube-admin-password.name}"
-    "SONARQUBE_SEARCH_JVM_OPTS"      = "-Dnode.store.allow_mmapfs=false"
+    "SONARQUBE_SEARCH_JVM_OPTS"      = var.sonarqube_search_jvm_opts
   }
   tags = var.tags
 }
