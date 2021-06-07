@@ -12,6 +12,11 @@ variable "sonarqube_aws_env_img" {
   default     = "vydev/sonarqube-aws-env:8.9"
 }
 
+variable "sonarqube_search_jvm_opts" {
+  description = "JVM options to pass to SonarQube on application start-up."
+  default     = "-Dnode.store.allow_mmap=false"
+}
+
 variable "health_check_grace_period_seconds" {
   description = "Seconds to ignore failing load balancer health checks on newly instantiated tasks to prevent premature shutdown, up to 7200. Only valid for services configured to use load balancers."
   type        = number
@@ -55,4 +60,14 @@ variable "hosted_zone_name" {
 
 variable "parameters_key_arn" {
   description = "The ARN of the kms key used to encrypt the parameters"
+}
+
+variable "deployment_minimum_healthy_percent" {
+  default     = 0
+  description = "The lower limit of the number of running tasks that must remain running and healthy in a service during a deployment."
+}
+
+variable "deployment_maximum_percent" {
+  default     = 100
+  description = "The upper limit of the number of running tasks that can be running in an ECS service during a deployment."
 }

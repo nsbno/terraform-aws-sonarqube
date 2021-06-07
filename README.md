@@ -22,11 +22,11 @@ To get a working Sonarqube installation up and running complete the following st
 
 | ssm parameter name| description |
 |--- |--- |
-|  \<name_prefix\>/github-auth-enabled |set to true|
-|  \<name_prefix\>/github-client-id | obtained from github|
-|  \<name_prefix\>/github-client-secret |obtained from github|
-|  \<name_prefix\>/github-organizations |github organisation for ouath|
-|  \<name_prefix\>/admin-username |may only contain url safe chars|
-|  \<name_prefix\>/admin-password |may only contain url safe chars|
+|  /<name_prefix\>/github-auth-enabled |set to true|
+|  /<name_prefix\>/github-client-id | obtained from github|
+|  /<name_prefix\>/github-client-secret |obtained from github|
+|  /<name_prefix\>/github-organizations |github organisation for ouath|
+|  /<name_prefix\>/admin-username |may only contain url safe chars|
+|  /<name_prefix\>/admin-password |may only contain url safe chars|
 
 5. run terraform apply

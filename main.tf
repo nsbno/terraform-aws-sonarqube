@@ -70,16 +70,18 @@ module "sonarqube_service" {
     path    = "/api/system/status"
     matcher = "200"
   }
-  lb_arn                            = module.alb.arn
-  name_prefix                       = var.name_prefix
-  private_subnet_ids                = module.vpc.private_subnet_ids
-  task_container_image              = var.sonarqube_aws_env_img
-  task_container_port               = 9000
-  task_container_protocol           = "HTTP"
-  vpc_id                            = module.vpc.vpc_id
-  task_definition_cpu               = var.task_definition_cpu
-  task_definition_memory            = var.task_definition_memory
-  health_check_grace_period_seconds = var.health_check_grace_period_seconds
+  lb_arn                             = module.alb.arn
+  name_prefix                        = var.name_prefix
+  private_subnet_ids                 = module.vpc.private_subnet_ids
+  task_container_image               = var.sonarqube_aws_env_img
+  task_container_port                = 9000
+  task_container_protocol            = "HTTP"
+  vpc_id                             = module.vpc.vpc_id
+  task_definition_cpu                = var.task_definition_cpu
+  task_definition_memory             = var.task_definition_memory
+  health_check_grace_period_seconds  = var.health_check_grace_period_seconds
+  deployment_maximum_percent         = var.deployment_maximum_percent
+  deployment_minimum_healthy_percent = var.deployment_minimum_healthy_percent
   task_container_ulimits = [
     {
       name : "nofile",
@@ -100,7 +102,7 @@ module "sonarqube_service" {
     "SONARQUBE_GITHUB_ORGANIZATIONS" = "ssm://${data.aws_ssm_parameter.sonarqube-github-organizations.name}"
     "SONARQUBE_ADMIN_USERNAME"       = "ssm://${data.aws_ssm_parameter.sonarqube-admin-username.name}"
     "SONARQUBE_ADMIN_PASSWORD"       = "ssm://${data.aws_ssm_parameter.sonarqube-admin-password.name}"
-    "SONARQUBE_SEARCH_JVM_OPTS"      = "-Dnode.store.allow_mmapfs=false"
+    "SONARQUBE_SEARCH_JVM_OPTS"      = var.sonarqube_search_jvm_opts
   }
   tags = var.tags
 }
