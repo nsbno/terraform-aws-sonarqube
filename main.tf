@@ -21,7 +21,7 @@ module "vpc" {
 }
 
 module "sonarqube_rds" {
-  source              = "github.com/nsbno/terraform-aws-rds-instance?ref=7e38055"
+  source              = "github.com/nsbno/terraform-aws-rds-instance?ref=b88aef"
   name_prefix         = var.name_prefix
   multi_az            = false
   port                = "5432"
