@@ -14,7 +14,7 @@ variable "sonarqube_aws_env_img" {
 
 variable "sonarqube_search_jvm_opts" {
   description = "JVM options to pass to SonarQube on application start-up."
-  default     = "-Dnode.store.allow_mmap=false"
+  default     = "-Dnode.store.allow_mmapfs=false"
 }
 
 variable "health_check_grace_period_seconds" {
