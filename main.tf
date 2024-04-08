@@ -27,6 +27,7 @@ module "sonarqube_rds" {
   port                = "5432"
   engine              = "postgres"
   instance_type       = "db.t3.small"
+  engine_version      = var.rds_engine_version
   allocated_storage   = "10"
   password            = data.aws_ssm_parameter.sonarqube-rds-password.value
   vpc_id              = module.vpc.vpc_id
