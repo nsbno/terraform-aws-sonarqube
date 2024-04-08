@@ -29,6 +29,7 @@ module "sonarqube_rds" {
   instance_type       = "db.t3.small"
   engine_version      = var.rds_engine_version
   allocated_storage   = "10"
+  allow_major_version_upgrade = var.allow_major_version_upgrade
   password            = data.aws_ssm_parameter.sonarqube-rds-password.value
   vpc_id              = module.vpc.vpc_id
   subnet_ids          = module.vpc.private_subnet_ids
