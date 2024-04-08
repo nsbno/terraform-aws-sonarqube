@@ -71,3 +71,8 @@ variable "deployment_maximum_percent" {
   default     = 100
   description = "The upper limit of the number of running tasks that can be running in an ECS service during a deployment."
 }
+
+variable "rds_engine_version" {
+  default = "16"
+  description = "What postgres engine version to use"
+}
