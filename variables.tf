@@ -76,3 +76,7 @@ variable "rds_engine_version" {
   default = "16"
   description = "What postgres engine version to use"
 }
+
+variable "allow_major_version_upgrade" {
+  default = false
+}
